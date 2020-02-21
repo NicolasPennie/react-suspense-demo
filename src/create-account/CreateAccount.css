@@ -1,0 +1,32 @@
+.Create-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Create-form > label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 400px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+.Create-form > label input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+}
+
+.Create-submit {
+    width: 100px;
+    align-self: flex-end;
+}
+
+.Create-login {
+    font-size: 10px;
+    width: 400px;
+    padding-top: 10px;
+}

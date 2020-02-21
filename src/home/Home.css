@@ -1,0 +1,26 @@
+.Home-login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.Home-login-form > label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 400px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+.Home-login-form > label input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+}
+
+.Home-create-account {
+    font-size: 10px;
+    width: 400px;
+    padding-top: 10px;
+}

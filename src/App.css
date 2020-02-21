@@ -2,41 +2,34 @@
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: 
+    "...    header    ..."
+    "...    content   ..."
+    "....   footer    ...";
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-login-form {
+.App-header {
+  grid-area: header;
+}
+
+.App-content {
+  grid-area: content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-login-form > label {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-  width: 400px;
-  line-height: 26px;
-  margin-bottom: 10px;
-  
-}
-
-.App-login-form > label input {
-  height: 20px;
-  flex: 0 0 200px;
-  margin-left: 10px;
-}
-
-.create-account-footer {
+.App-footer {
+  grid-area: footer;
   font-size: 10px;
-  width: 400px;
 }
 
-.create-account-footer a {
+a {
   color: whitesmoke;
 }
