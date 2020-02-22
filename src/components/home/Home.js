@@ -1,8 +1,10 @@
 import React from 'react';
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Home() {
+  const history = useHistory();
+
   return (
     <React.Fragment>
       <form className="Home-login-form">
@@ -14,6 +16,9 @@ function Home() {
           Password
           <input type="password" name="password"/>
         </label>
+        <button class="Home-login" onClick={() => history.push('/user')}>
+          Login
+        </button>
       </form>
       <div className="Home-create-account">
         <span>

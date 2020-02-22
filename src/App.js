@@ -1,42 +1,48 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 import './App.css';
-import Home from './home/Home';
-import ErrorBoundry from './error-boundry/ErrorBoundry';
-import Users from './users/Users';
+import Home from './components/home/Home';
+import ErrorBoundry from './components/error-boundry/ErrorBoundry';
+import User from './components/user/User';
 
-const CreateAccount = React.lazy(() => import('./create-account/CreateAccount'));
+const CreateAccount = React.lazy(() => import('./components/create-account/CreateAccount'));
 
 function App() {
+  const history = useHistory();
+  const goTo = (route) => {
+    console.log('going to ', route);
+    history.push(route);
+  };
+
   return (
-    <Router>
-        <div className="App">
-          <header className="App-header">
-            <h1>Suspense App</h1>
-          </header>
-          <section className="App-content">
-            <ErrorBoundry>
-              <Switch>
-                <Route path="/create">
-                  <Suspense fallback={<span>loading...</span>}>
-                    <CreateAccount/>
-                  </Suspense>
-                </Route>
-                <Route path="/users">
-                  <Users/>
-                </Route>
-                <Route path="/">
-                  <Home/>
-                </Route>
-              </Switch>
-            </ErrorBoundry>
-          </section>
-          <footer className="App-footer">
-            React Ottawa February 2020
-          </footer>
-        </div>
-      </Router>
+    <div className="App">
+      <ErrorBoundry>
+        <header className="App-header">
+            <h1 onClick={() => goTo('/')}>
+              Suspense App
+            </h1>
+        </header>
+        <section className="App-content">
+            <Switch>
+              <Route path="/create">
+                <Suspense fallback={<span>loading...</span>}>
+                  <CreateAccount/>
+                </Suspense>
+              </Route>
+              <Route path="/user">
+                <User/>
+              </Route>
+              <Route path="/">
+                <Home/>
+              </Route>
+            </Switch>
+        </section>
+        <footer className="App-footer">
+          React Ottawa February 2020
+        </footer>
+      </ErrorBoundry>
+    </div>
   );
 }
 

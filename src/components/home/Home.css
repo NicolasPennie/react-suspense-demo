@@ -1,6 +1,7 @@
 .Home-login-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   
 .Home-login-form > label {
@@ -17,6 +18,11 @@
     height: 20px;
     flex: 0 0 200px;
     margin-left: 10px;
+}
+
+.Home-login {
+    width: 100px;
+    align-self: flex-end;
 }
 
 .Home-create-account {

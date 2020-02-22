@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 50px auto 50px;
-  grid-template-rows: 50px auto 50px;
+  grid-template-rows: 80px auto 80px;
   grid-template-areas: 
     "...    header    ..."
     "...    content   ..."
@@ -15,6 +15,7 @@
 
 .App-header {
   grid-area: header;
+  padding-top: 30px;
 }
 
 .App-content {
@@ -28,6 +29,11 @@
 .App-footer {
   grid-area: footer;
   font-size: 10px;
+  padding-top: 30px
+}
+
+h1 {
+  margin: 0;
 }
 
 a {

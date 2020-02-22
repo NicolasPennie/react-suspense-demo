@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Users() {
+function User() {
   return (
     <React.Fragment>
       <p>Users go here</p>
@@ -8,4 +8,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default User;
