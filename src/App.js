@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './home/Home';
 import ErrorBoundry from './error-boundry/ErrorBoundry';
+import Users from './users/Users';
 
 const CreateAccount = React.lazy(() => import('./create-account/CreateAccount'));
 
@@ -21,6 +22,9 @@ function App() {
                   <Suspense fallback={<span>loading...</span>}>
                     <CreateAccount/>
                   </Suspense>
+                </Route>
+                <Route path="/users">
+                  <Users/>
                 </Route>
                 <Route path="/">
                   <Home/>
