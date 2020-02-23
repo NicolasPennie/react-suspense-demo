@@ -4,9 +4,9 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/Home';
 import ErrorBoundry from './components/error-boundry/ErrorBoundry';
+import User from './components/user/User';
 
 const CreateAccount = React.lazy(() => import('./components/create-account/CreateAccount'));
-const User = React.lazy(() => import('./components/user/User'));
 
 function App() {
   const history = useHistory();
@@ -21,19 +21,19 @@ function App() {
             </h1>
         </header>
         <section className="App-content">
-          <Suspense fallback={<span>loading...</span>}>
-            <Switch>
-              <Route path="/create">
-                  <CreateAccount/>
-              </Route>
-              <Route path="/user">
-                <User/>
-              </Route>
-              <Route path="/">
-                <Home/>
-              </Route>
-            </Switch>
-          </Suspense>
+          <Switch>
+            <Route path="/create">
+              <Suspense fallback={<span>loading...</span>}>
+                <CreateAccount/>
+              </Suspense>
+            </Route>
+            <Route path="/user">
+              <User/>
+            </Route>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
         </section>
         <footer className="App-footer">
           React Ottawa February 2020
