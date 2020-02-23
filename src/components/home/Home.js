@@ -16,7 +16,7 @@ function Home() {
           Password
           <input type="password" name="password"/>
         </label>
-        <button class="Home-login" onClick={() => history.push('/user')}>
+        <button className="Home-login" type="button" onClick={() => history.push('/user')}>
           Login
         </button>
       </form>
