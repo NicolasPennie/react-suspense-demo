@@ -14,13 +14,13 @@ function App() {
 
   return (
     <div className="App">
-      <ErrorBoundry>
-        <header className="App-header">
-            <h1 onClick={() => goTo('/')}>
-              Suspense App
-            </h1>
-        </header>
-        <section className="App-content">
+      <header className="App-header">
+        <h1 onClick={() => goTo('/')}>
+          Suspense App
+        </h1>
+      </header>
+      <section className="App-content">
+        <ErrorBoundry>
           <Switch>
             <Route path="/create">
               <Suspense fallback={<span>loading...</span>}>
@@ -34,11 +34,11 @@ function App() {
               <Home/>
             </Route>
           </Switch>
-        </section>
-        <footer className="App-footer">
-          React Ottawa February 2020
-        </footer>
-      </ErrorBoundry>
+        </ErrorBoundry>
+      </section>
+      <footer className="App-footer">
+        React Ottawa February 2020
+      </footer>
     </div>
   );
 }
